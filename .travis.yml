@@ -5,13 +5,12 @@ node_js:
 
 before_script:
   - yarn setup
-  - yarn build
 
 script:
   - yarn test
 
 after_success:
-  - yarn pack
+  - yarn publish
 
 deploy:
 #  - provider: pages
@@ -23,7 +22,7 @@ deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
-    file: "smart_pluralisation-*.tgz"
+    file: "data_types-*.tgz"
     skip_cleanup: true
     on:
       tags: true

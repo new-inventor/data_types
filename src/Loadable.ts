@@ -1,4 +1,4 @@
-import {ObjectHelper} from '@/helpers/ObjectHelper';
+import forOwn from 'lodash/forOwn';
 
 export interface ILoadable {
   load(parameters?: { [index: string]: any }): void;
@@ -9,7 +9,7 @@ export class Loadable implements ILoadable {
     if (!parameters || typeof parameters !== 'object') {
       return;
     }
-    ObjectHelper.forEach(parameters, (item: any, key: string) => {
+    forOwn(parameters, (item: any, key: string) => {
         // @ts-ignore
         this[key] = parameters[key] as any;
     });

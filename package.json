@@ -11,14 +11,17 @@
     "clone",
     "tree"
   ],
-  "main": "index.js",
   "scripts": {
     "setup": "yarn install",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "publish_win": "yarn build && yarn copy_files_to_root && yarn pack && yarn delete_files_from_root_win",
+    "publish_lin": "yarn build && yarn copy_files_to_root && yarn pack && yarn delete_files_from_root_win",
+    "copy_files_to_root": "copyfiles -f lib/*.ts lib/*.js .",
+    "delete_files_from_root_win": "del-cli ./*.ts ./*.js",
+    "delete_files_from_root": "del ./*.ts",
     "lint": "tslint -p tsconfig.json",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn test && yarn lint",
+    "prepublishOnly": "yarn lint",
     "preversion": "yarn lint",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
@@ -39,10 +42,20 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
+    "del-cli": "^3.0.0",
+    "copyfiles": "^2.2.0",
+    "del": "^5.1.0",
     "tslint": "^6.1.0",
     "typescript": "^3.8.3"
   },
   "files": [
-    "lib/**/*"
+    "Clonable.d.ts",
+    "Clonable.js",
+    "Loadable.d.ts",
+    "Loadable.js",
+    "Singleton.d.ts",
+    "Singleton.js",
+    "TreeItem.d.ts",
+    "TreeItem.js"
   ]
 }

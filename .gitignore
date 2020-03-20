@@ -1,2 +1,11 @@
 node_modules
 /lib
+Clonable.d.ts
+Clonable.js
+Loadable.d.ts
+Loadable.js
+Singleton.d.ts
+Singleton.js
+TreeItem.d.ts
+TreeItem.js
+/*.tgz
