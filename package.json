@@ -1,6 +1,6 @@
 {
   "name": "data_types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Smart pluralisation for russian and english words can be extended by another languages",
   "keywords": [
     "singleton",
