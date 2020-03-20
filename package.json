@@ -1,0 +1,48 @@
+{
+  "name": "data_types",
+  "version": "1.0.0",
+  "description": "Smart pluralisation for russian and english words can be extended by another languages",
+  "keywords": [
+    "singleton",
+    "tree item",
+    "loadable",
+    "clonnable",
+    "load",
+    "clone",
+    "tree"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "setup": "yarn install",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/new-inventor/smart_pluralization"
+  },
+  "author": "George Ionov <newinventor20@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/new-inventor/smart_pluralization/issues"
+  },
+  "homepage": "https://github.com/new-inventor/smart_pluralization#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.149",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
